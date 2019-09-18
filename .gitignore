@@ -1,8 +1,7 @@
-./target/*
-/admin/target/
-/common/target/
-/data/target/
-/eureka/target/
-/starter/target/
+parent/admin/target
+parent/common/target
+parent/data/target
+parent/eureka/target
+parent/starter/target
 .idea
 parent.iml
