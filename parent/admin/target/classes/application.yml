@@ -1,0 +1,63 @@
+server:
+  port: 8082
+#服务发现配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka/
+  instance:
+    preferIpAddress: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+
+spring:
+  application:
+    #本项目名称
+    name: admin
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root123456
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=GMT%2B8&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    sql-script-encoding: UTF-8
+    platform: mysql
+  mvc:
+    static-path-pattern: /ue/**
+  resources:
+    static-locations: classpath:/ue/
+
+#自定义配置
+market:
+  swagger:
+    enable: true
+    base-package: com.sw
+    version: 1.0
+    title: admin
+    description: 接口文档
+    termsOfServiceUrl:  API TERMS URL
+    license:  license
+    license-url:  license url
+    contact-name: chenshiwan
+    contact-url: inleft.com
+    contact-email: inleft@qq.com
+    global-operation-parameters:
+      - name: deviceId
+        description: 设备id
+      - name: token
+        description: token
+      - name: accountId
+        description: 用户id
+
+dfs:
+  ueFileServer:                                            #ue的文件上传配置
+    fileUploadUrl: "http://localhost:8082/file/upload"  #上传服务器接口名称
+    save-path-prefix: "E:/ue"                               #保存路径前缀
+    read-path-prefix: "http://localhost:9900/ue"           #访问路径前缀
+  file:
+    upload-path: "E://file/uploadFile/"
+    download-path: "E://file/downloadFile/"
+
+monitor:
+  swagger-access-log: true
+
+
