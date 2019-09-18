@@ -1,5 +1,4 @@
 ./target/*
-/admin/admin.iml
 /admin/target/
 /common/target/
 /data/target/
