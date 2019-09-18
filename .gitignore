@@ -4,4 +4,4 @@ parent/data/target
 parent/eureka/target
 parent/starter/target
 .idea
-.iml
+*.iml
