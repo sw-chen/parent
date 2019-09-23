@@ -154,7 +154,7 @@ public class CodeGenerator {
 
 //        strategy.setRestControllerStyle(true);
 //        strategy.setSuperControllerClass("com.baomidou.ant.com.sw.common.BaseController");
-        strategy.setInclude("user");      //表名
+        strategy.setInclude("role");      //表名
 //        strategy.setSuperEntityColumns("id");
 //        strategy.setControllerMappingHyphenStyle(true);
 //        strategy.setTablePrefix(pc.getModuleName() + "_");
